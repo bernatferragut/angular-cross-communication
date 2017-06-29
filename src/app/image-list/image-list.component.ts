@@ -1,6 +1,5 @@
-import { ImageService } from './../shared/image.service';
 import { Component, OnInit } from '@angular/core';
-
+import { ImageService } from '../shared/image.service';
 
 @Component({
   selector: 'app-image-list',
@@ -10,16 +9,29 @@ import { Component, OnInit } from '@angular/core';
 export class ImageListComponent implements OnInit {
 
   images: any[];
+  imagesFound: boolean = false;
 
   constructor(private _imageService: ImageService) { }
 
+  handleSuccess(data) {
+    this.imagesFound = true;
+    this.images = data.hits;
+    console.log(data.hits);
+  }
+
+  handleError(data) {
+    console.log(data.error);
+  }
+
+  searchImages(query: string) {
+    return this._imageService.getImages(query).subscribe(
+      data => this.handleSuccess(data),
+      error => this.handleError(error),
+      () => console.log('Request Completed!'),
+      
+    )
+  }
+
   ngOnInit() {
   }
-
-  searchImages( query ) {
-    this.images.  = this._imageService.getImages( query ).subscribe(
-      data => console.log(data);
-    );
-  }
-
 }

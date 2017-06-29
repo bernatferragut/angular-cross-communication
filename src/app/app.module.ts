@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ImageListComponent } from './image-list/image-list.component';
@@ -11,7 +13,9 @@ import { ImageService } from './shared/image.service';
     ImageListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    FormsModule
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]
