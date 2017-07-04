@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Pictures Finder';
+
+  // parentMsg: string = 'P>C Msg';
+
+  messageRecieved: string;
+
+  recieveMesage($event) {
+    this.messageRecieved = $event;
+  }
+
 }

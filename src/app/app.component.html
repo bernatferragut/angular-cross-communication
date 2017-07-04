@@ -1,15 +1,13 @@
-<div class="container">
-  <div class="main-content">
-    <div class="header">
-      <span id="title"> {{ title }} </span>
-      <div class="logo">
-        <div id="attribution">All images provided by</div>
-        <a href="https://pixabay.com" target="_blank">
-          <img src= "../assets/logo.png" class="pixabayLogo">
-        </a>
-      </div>
-    </div>
+<div class="general">
+  
+  <md-card class="flexbox">
+    <md-card-header>
+      <md-card-title class="daFont">P A R E N T</md-card-title>
+      <md-card-subtitle class="daFont">{{ messageRecieved }}</md-card-subtitle>
+    </md-card-header>
+  </md-card>
 
-    <app-image-list></app-image-list>
-  </div>
+  <app-child (messageEvent)="recieveMesage($event) "></app-child>
+
 </div>
+

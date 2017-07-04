@@ -9,11 +9,15 @@ import { MasonryModule } from 'angular2-masonry';
 import { AppComponent } from './app.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageService } from './shared/image.service';
+import { ChildComponent } from './child/child.component';
+import { SiblingComponent } from './sibling/sibling.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageListComponent
+    ImageListComponent,
+    ChildComponent,
+    SiblingComponent
   ],
   imports: [
     BrowserModule,
